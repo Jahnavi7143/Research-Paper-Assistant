@@ -46,21 +46,6 @@ An AI-powered **RAG (Retrieval-Augmented Generation)** application that lets use
    - *Comparison* → relevant chunks are retrieved **per paper**, labeled by source, and the LLM produces a balanced comparison.
 7. **Persist** — every message is saved to SQLite under the user's ID and reloaded on their next login.
 
-\`\`\`
-          Register / Login (bcrypt + SQLite)
-                        │
-PDF(s) ─▶ Chunk ─▶ Embed ─▶ Chroma vector DB
-                                │
-        User message ─▶ Intent classifier (LLM)
-                                │
-                ┌───────────────┴───────────────┐
-          Normal question                  Comparison
-        (retrieve across all)        (retrieve per paper, labeled)
-                └───────────────┬───────────────┘
-                                ▼
-                          Groq LLM ─▶ Answer ─▶ saved to SQLite (per user)
-\`\`\`
-
 ---
 
 ## 🚀 Setup & Run
