@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 .streamlit/
 chroma_db/
+app_data.db
